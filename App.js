@@ -1,6 +1,8 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, ScrollView, SafeAreaView } from 'react-native';
 import { useState } from "react";
+import { Image } from 'react-native';
+
 
 const staffMembers = [
   {
@@ -39,10 +41,13 @@ export default function App() {
       { }
       <View style={styles.header}>
         <View style={styles.headerContent}>
-          <View style={styles.logoContainer}>
-            <Text style={styles.logo}>name go here</Text>
+          <View>
+                  <Image
+                  style={styles.img}
+                  source={require('./assets/logo.png')}
+                />
           </View>
-          <Text style={styles.welcomeText}>welcome</Text>
+          <Text style={styles.welcomeText}>Welcome!</Text>
         </View>
       </View>
 
@@ -76,12 +81,12 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: {
+   container: {
     flex: 1,
-    backgroundColor: "#f5f5f5",
+    backgroundColor: "#ffffff",
   },
   header: {
-    backgroundColor: "#B91C1C",
+    backgroundColor: "#941a1d",
     paddingVertical: 20,
     paddingHorizontal: 20,
   },
@@ -90,6 +95,13 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    backgroundColor: "#f5f5f5",
+    backgroundColor: "#ffffff",
+  },
+  welcomeText: {
+    fontSize: 20,
+  },
+  img: {
+    width: 500,
+    height: 250,
   }
 });
